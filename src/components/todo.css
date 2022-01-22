@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Oswald:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Mulish:wght@300&family=Oswald:wght@300;400&display=swap');
+*{
+    margin:0;
+    padding:0;
+    /* box-sizing: border-box; */
+}
+
+.container{
+    margin-left: 15%;
+    margin-right: 15%;
+    background: #0e0a3d;
+    height: 100vh;
+    display:grid;
+    /* position: relative;
+    height : 100%; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 2fr;        
+    grid-template-areas:
+    "image image image"
+    "values values icons"
+    "child child child";
+    grid-gap : 0.2rem;
+    
+}
+
+
+
+.image{
+    /* background: green; */
+    grid-area :image;
+    display:flex;
+    justify-content: center;
+}
+
+.img_main{
+    height: 20vh;
+    animation: zoom-in-zoom-out 1s ease-in-out infinite ;
+    position : relative;
+    top : 5%;
+    filter:invert(99%)
+}
+
+@keyframes zoom-in-zoom-out{
+    0%{
+        transform:scale(0.5,0.5);
+    }
+
+    50%{
+        transform:scale(1,1);
+    }
+    100%{
+        transform: scale(0.5,0.5);
+    }
+}
+
+
+
+.values{
+    /* background: #F64C72; */
+    grid-area:values;
+    /* display:block; */
+    
+}
+
+input{
+    position:relative;
+    left:5%;
+    width:80%;
+    /* align-content: center; */
+    margin : 10px;
+    padding: 10px;
+    display:block;
+    border-radius: 10px;
+    color:white;
+    background-color :#F64C72;
+    font-size: 1.2rem;
+}
+
+input::placeholder{
+    color:white;
+    font-size: 1.2rem;
+}
+
+input:hover{
+    background-color:#8d1f37 ;
+    transition: 0.5s;
+}
+
+.icons{
+    /* background: pink; */
+    grid-area:icons;
+    display:flex;
+    justify-content: left;
+}
+
+.child{
+    /* background: grey; */
+    grid-area:child;
+    display:block;
+    justify-content: center;
+}
+
+.icons button{
+    width:30%;
+    text-align: center;
+    border-radius: 30px;
+    /* padding-top: 15%; */
+    margin:10px;
+    font-size:20px;
+    cursor:pointer;
+    background-color: white;
+    border: 1px solid black;
+    font-family: Mochiy Pop P One;
+    font-size: 15px;
+    padding:10px;
+}
+
+.icons button:hover{
+    background-color: rgba(43, 43, 41);
+    transition : 0.7s;
+    color:white;
+}
+
+.output{
+    background: rgb(221, 156, 36);
+    margin:10px;
+    display:flex;
+    justify-content: space-between;
+    /* justify-content:flex-end; */
+    /* display:inline; */
+    border-radius: 20px;
+    font-family: Mulish;
+    color:ivory;
+}
+
+.output:hover{
+    background-color: rgb(146, 101, 16);
+    transition: 0.5s;
+}
+
+#edit:hover{
+    color: blue;
+}
+
+#del:hover{
+    color:rgb(243, 4, 4);
+}
+
+
+
+
+.todo{
+    padding:20px;
+    font-size: 20px;
+}
+
+.todo_icon i{
+    padding:10px;
+    font-size: 20px;
+    cursor:pointer;
+}
+@media only screen and (max-width:550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.3fr 0.3fr 1.5fr;
+        grid-template-areas: 
+        "image"
+        "values"
+        "icons"
+        "child";
+    }
+}
+
